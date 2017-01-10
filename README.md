@@ -45,7 +45,7 @@ optional arguments:
 DroidGraph can be instructed to include or exclude certain classes. The 
 includes.txt file shows a simple example on how to only include the Android 
 support v4 library. If you do not specify any include or exclude list, the 
-whole code based is exported and shown in the graphs.
+whole codebase of the APK is exported and shown in the graphs.
 ## RoadMap
 
 * Dependency graph
