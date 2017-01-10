@@ -134,10 +134,8 @@ Clear the cache directory.
 def clear_cache():
     try:
         shutil.rmtree(CACHE_PATH)
-    except OSError:
         os.makedirs(CACHE_PATH)
-
-    if not os.path.exists(CACHE_PATH):
+    except OSError:
         os.makedirs(CACHE_PATH)
 
 '''
