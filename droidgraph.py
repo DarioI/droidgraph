@@ -113,6 +113,8 @@ def parse_arguments():
 
 '''
 Sanity check to see if a valid APK file is specified.
+
+TODO: implement more specific check to see if it is a valid APK file
 '''
 def check_apk_file():
     if APK_FILE == "" or not os.path.isfile(APK_FILE):
