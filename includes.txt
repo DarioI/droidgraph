@@ -1,4 +1,3 @@
-# Test comment
-Linfo/pkwapps/*
-Lcom/google/ads/*
-Lcom/yttkr/wixyx124237/*
+# The following line includes all the android support v4 code.
+Landroid/support/v4/*
+
