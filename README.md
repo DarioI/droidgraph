@@ -48,5 +48,5 @@ support v4 library. If you do not specify any include or exclude list, the
 whole code based is exported and shown in the graphs.
 ## RoadMap
 
-* Dependecy graph
+* Dependency graph
 * Call graph
