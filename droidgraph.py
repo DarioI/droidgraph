@@ -68,7 +68,10 @@ def parse_configuration_list(file):
 Parse the arguments and assign global variables that we will be using throughout the tool.
 '''
 def parse_arguments():
-    parser = argparse.ArgumentParser(description='APK Analyzer')
+    parser = argparse.ArgumentParser(description='Create different graphs '
+                                                 'from Android DEX bytecode '
+                                                 'to get insight in the code '
+                                                 'structure.')
     parser.add_argument('-a', '--apk', type=str, help='APK file to analyze',
                         required=True)
     parser.add_argument('-d', '--directory', type=str, help="Directory to "
@@ -80,13 +83,13 @@ def parse_arguments():
                                                           'define the classes '
                                                           'to be '
                                                           'included in the '
-                                                          'scope')
+                                                          'scope (OPTIONAL)')
     parser.add_argument('-x', '--exclude', type=str, help='Specify a list of '
                                                           'regexes that '
                                                           'define the classes '
                                                           'to be '
                                                           'excluded in the '
-                                                          'scope')
+                                                          'scope (OPTIONAL)')
     args = parser.parse_args()
 
     global APK_FILE
