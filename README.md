@@ -1,4 +1,4 @@
-# DroidGraph
+# DroidGraph [![Build Status](https://travis-ci.org/DarioI/droidgraph.svg?branch=master)](https://travis-ci.org/DarioI/droidgraph)
 
 DroidGraph disassembles bytecode in the Android .apk file and will generate 
 various graphs to get insight in the code. All the graphs are exported as 
