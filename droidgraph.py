@@ -96,7 +96,10 @@ def parse_arguments():
     APK_FILE = args.apk
 
     global GRAPH_PATH
-    GRAPH_PATH = args.directory
+    if args.directory is not None:
+        GRAPH_PATH = args.directory
+    else:
+        GRAPH_PATH = os.getcwd()
 
     global INCLUDE_LIST
     if args.include is not None:
