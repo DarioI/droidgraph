@@ -57,6 +57,8 @@ def parse_configuration_list(file):
             if line.strip(' \t\n\r').startswith("#"):
                 continue
             regex = line.strip(' \t\n\r')
+            if not regex:
+                continue
             if not isValidRegEx(regex):
                 print "CONFIG ERR: Ignoring %s because it is not a valid regex." % regex
             else:
