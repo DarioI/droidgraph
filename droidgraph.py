@@ -60,7 +60,7 @@ def parse_configuration_list(file):
             if not regex:
                 continue
             if not isValidRegEx(regex):
-                print "CONFIG ERR: Ignoring %s because it is not a valid regex." % regex
+                print("CONFIG ERR: Ignoring %s because it is not a valid regex." % regex)
             else:
                 result.append(regex)
     return result
@@ -107,13 +107,13 @@ def parse_arguments():
     if args.include is not None:
         INCLUDE_LIST = parse_configuration_list(args.include)
         for regex in INCLUDE_LIST:
-            print "CONFIG: Including classes matching %s" % regex
+            print("CONFIG: Including classes matching %s" % regex)
 
     global EXCLUDE_LIST
     if args.exclude is not None:
         EXCLUDE_LIST = parse_configuration_list(args.exclude)
         for regex in EXCLUDE_LIST:
-            print "CONFIG: Excluding classes matching %s" % regex
+            print("CONFIG: Excluding classes matching %s" % regex)
 
 
 '''
@@ -123,14 +123,14 @@ TODO: implement more specific check to see if it is a valid APK file
 '''
 def check_apk_file():
     if APK_FILE == "" or not os.path.isfile(APK_FILE):
-        print "No APK file specified, exiting."
+        print("No APK file specified, exiting.")
         exit(3)
 
 '''
 Use baksmali to disassemble the APK.
 '''
 def disassemble_apk():
-    print "Disassembling APK ..."
+    print("Disassembling APK ...")
     call(["java", "-jar", BAKSMALI_PATH, "d", APK_FILE, "-o", CACHE_PATH])
 
 '''
@@ -184,7 +184,7 @@ def is_excluded(class_name):
 Create the actual hierarchy graph from disassembled DEX bytecode.
 '''
 def create_hierarchy_graph():
-    print "Generating graph ..."
+    print("Generating graph ...")
     hierarchy_graph = nx.DiGraph()
     for subdir, dirs, files in os.walk(CACHE_PATH):
         for file in files:
@@ -215,9 +215,9 @@ def create_hierarchy_graph():
                     continue
 
                 if class_name == "":
-                    print "ERR: Could not parse class name from " + full_path
+                    print("ERR: Could not parse class name from " + full_path)
                 elif super_class == "":
-                    print "ERR: Could not parse super class name from " + full_path
+                    print("ERR: Could not parse super class name from " + full_path)
                 else:
                     if not super_class == "Ljava/lang/Object;":
                         hierarchy_graph.add_edge(class_name, super_class,
@@ -228,7 +228,7 @@ def create_hierarchy_graph():
                                                      label="I", color="red")
 
     write_dot(hierarchy_graph, GRAPH_PATH + "/hierarchy.dot")
-    print "Hierarchy graph is located at %s" % (GRAPH_PATH + "/hierarchy.dot")
+    print("Hierarchy graph is located at %s" % (GRAPH_PATH + "/hierarchy.dot"))
 
 
 def main():
@@ -242,7 +242,7 @@ def main():
 if __name__ == "__main__":
 
     if not has_baksmali():
-        print "No baksmali.jar found in " + BAKSMALI_PATH
+        print("No baksmali.jar found in " + BAKSMALI_PATH)
         exit(2)
 
     main()
