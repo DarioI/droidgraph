@@ -2,9 +2,9 @@
 
 DroidGraph disassembles bytecode in the Android .apk file and will generate 
 various graphs to get insight in the code. All the graphs are exported as 
-.dot files which you can view in .dot viewers like for example (GraphViz)[http://www.graphviz.org]
+.dot files which you can view in .dot viewers like for example [GraphViz](http://www.graphviz.org)
 
-For disassembling DEX bytecode, DroidGraph uses the (smali/baksmali)[https://github.com/JesusFreke/smali] disassembler developed by Ben Gruver.
+For disassembling DEX bytecode, DroidGraph uses the [smali/baksmali](https://github.com/JesusFreke/smali) disassembler developed by Ben Gruver.
 
 ## Requirements
 
